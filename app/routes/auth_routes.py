@@ -37,7 +37,8 @@ def register():
         # Crear nuevo usuario
         new_user = Users(
             UserName=data['UserName'],
-            Email=data['Email']
+            Email=data['Email'],
+            iD_City=data.get('iD_City')
         )
         new_user.set_password(data['PasswoRDkey'])
         
@@ -171,4 +172,3 @@ def change_password():
     except Exception as e:
         db.session.rollback()
         return jsonify({'error': str(e)}), 500
-    
