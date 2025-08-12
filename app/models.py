@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # Tabla de asociación para User-Role (Many-to-Many)
 user_roles = db.Table('UserRole',
-    db.Column('idROLE', db.Integer, db.ForeignKey('role_s.iDRole'), primary_key=True),
+    db.Column('idROLE', db.Integer, db.ForeignKey('RoleS.iDRole'), primary_key=True),
     db.Column('iD_Useri', db.Integer, db.ForeignKey('users.iD_User'), primary_key=True)
 )
 
@@ -67,7 +67,7 @@ class City(db.Model):
         }
 
 class RoleS(db.Model):
-    __tablename__ = 'role_s'
+    __tablename__ = 'RoleS'
     
     iDRole = db.Column(db.Integer, primary_key=True, autoincrement=True)
     TypeRole = db.Column(db.String(50), nullable=False)
