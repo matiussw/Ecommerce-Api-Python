@@ -65,6 +65,16 @@ curl -X GET {{BASE_URL}}/api/auth/roles \
   -H "Content-Type: application/json"
 ```
 
+### Cambiar a rol admin (ajusta el ID del usuario)
+```bash
+curl -X PUT http://localhost:5050/api/users/5/roles \
+  -H "Authorization: Bearer TU_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"role_ids":[1]}'
+```
+
+
+
 ## 📱 PRODUCTOS
 
 ### 7. Listar Productos (sin filtros)
